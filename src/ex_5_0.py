@@ -18,3 +18,4 @@ if __name__ == "__main__":
     # Test line_count with a file from the data directory
     data_directory = get_repository_root() / "data"
     line_count(data_directory / "ex_5_2-data.csv")
+    print()
