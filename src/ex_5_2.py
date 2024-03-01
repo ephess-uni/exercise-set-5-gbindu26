@@ -20,6 +20,13 @@ if __name__ == "__main__":
     root_dir = get_repository_root()
     INFILE = root_dir / "data" / "ex_5_2-data.csv"
     OUTFILE = root_dir / "outputs" / "ex_5_2-processed.csv"
+    
+    data = np.loadtxt(INFILE, delimiter=',')
+    
+    shifted_data = data - np.mean(data, axis=0)
+    scaled_data = shifted_data / np.std(shifted_data, axis=0)
+    
+    np.savetxt(OUTFILE, scaled_data, delimiter=',', fmt='%.6f')
 
     # Complete the data processing steps using numpy here.
 
